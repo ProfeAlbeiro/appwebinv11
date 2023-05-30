@@ -32,5 +32,7 @@
                 </div>
             </aside>
             <main class="borde">
-                <div class="migas">Migas</div>
-                <div class="principal">
+                <div class="borde migas">
+                    <a href="">Inicio</a> / <a href="">...</a>
+                </div>
+                <div class="borde principal">

@@ -88,13 +88,22 @@ aside{
 .modulo a{
     padding: 5px 10px;
     justify-content: flex-start;
-    color: #ff;
+    color: #fff;
 }
 main{
     flex: 80%;
-    padding: 60px 10px 10px 10px;
-    padding: 10px;
+    padding: 60px 10px 10px 10px;    
     flex-flow: column nowrap;
+}
+.migas{
+    padding: 5px;
+}
+.migas a{
+    flex: 0;
+    padding: 0 15px;
+}
+.principal{
+    padding: 5px;
 }
 footer{
     height: 10vh;
