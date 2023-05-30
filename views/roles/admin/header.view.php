@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="borde ingreso">
-                <a href="">Cerrar Sesión</a>
+                <a href="?c=Logout">Cerrar Sesión</a>
             </div>
         </nav>
         <section>
