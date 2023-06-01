@@ -6,6 +6,7 @@
         protected $userName;        
         protected $userLastName;        
         protected $userEmail;        
+        protected $userPass;        
         public function __construct(){}
         # Código Rol
         public function setRolCode($rolCode){
@@ -48,6 +49,13 @@
         }
         public function getUserEmail(){
             return $this->userEmail;
+        }
+        # PassWord Usuario
+        public function setUserPass($userPass){
+            $this->userPass = $userPass;
+        }
+        public function getUserPass(){
+            return $this->userPass;
         }
     }
 ?>

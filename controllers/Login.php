@@ -1,4 +1,5 @@
 <?php
+    require_once "models/User.php";
     class Login{
         public function __construct(){}
         public function main(){
@@ -15,11 +16,15 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
-                if ($user == "pepito@perez.com" AND $pass = "12345") {
-                    header("Location: ?c=Dashboard");
-                } else {
-                    header("Location: ?");                    
-                }
+                $userObj = new User;
+                $userObj->setUserEmail($user);
+                $userObj->setUserPass($pass);
+                print_r($userObj);
+                // if ($user == "pepito@perez.com" AND $pass = "12345") {
+                //     header("Location: ?c=Dashboard");
+                // } else {
+                //     header("Location: ?");                    
+                // }
             }
         }
     }
