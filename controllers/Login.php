@@ -14,9 +14,10 @@
                 require_once "views/company/footer.view.php";
             }
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {                
-                $userObj = new Credential;
-                $userObj->setUserEmail($_POST['user']);
-                $userObj->setCredentialPass($_POST['pass']);                
+                $userObj = new Credential(
+                    $_POST['user'],
+                    $_POST['pass']
+                );
                 if ($userObj->getUserEmail() == "pepito@perez.com" AND $userObj->getCredentialPass() == "12345") {
                     header("Location: ?c=Dashboard");
                 } else {

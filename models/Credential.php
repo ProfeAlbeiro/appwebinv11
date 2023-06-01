@@ -6,7 +6,17 @@
         protected $credentialStartDate;
         protected $credentialPass;
         protected $credentialStatus;
-        public function __construct(){}
+        public function __construct(){
+            $a = func_get_args();
+            $i = func_num_args();
+            if (method_exists($this, $f = '__construct' . $i)) {
+                call_user_func_array(array($this, $f), $a);
+            }
+        }
+        public function __construct2($userEmail, $credentialPass){
+            $this->userEmail = $userEmail;
+            $this->credentialPass = $credentialPass;
+        }
         # Foto de la Credencial
         public function setCredentialPhoto($credentialPhoto){
             $this->credentialPhoto = $credentialPhoto;
