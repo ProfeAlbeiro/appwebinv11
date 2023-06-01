@@ -1,5 +1,5 @@
 <?php
-    require_once "models/User.php";
+    require_once "models/Credential.php";
     class Login{
         public function __construct(){}
         public function main(){
@@ -14,14 +14,14 @@
                 require_once "views/company/footer.view.php";
             }
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {                
-                // $userObj = new User;
-                // $userObj->setUserEmail($_POST['user']);
-                // $userObj->setUserPass($_POST['pass']);                
-                // if ($userObj->getUserEmail() == "pepito@perez.com" AND $userObj->getUserPass() == "12345") {
-                //     header("Location: ?c=Dashboard");
-                // } else {
-                //     header("Location: ?");                    
-                // }
+                $userObj = new Credential;
+                $userObj->setUserEmail($_POST['user']);
+                $userObj->setCredentialPass($_POST['pass']);                
+                if ($userObj->getUserEmail() == "pepito@perez.com" AND $userObj->getCredentialPass() == "12345") {
+                    header("Location: ?c=Dashboard");
+                } else {
+                    header("Location: ?");                    
+                }
             }
         }
     }

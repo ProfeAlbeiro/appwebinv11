@@ -1,4 +1,5 @@
 <?php
+    require_once "models/User.php";
     class Credential extends User{
         protected $credentialPhoto;
         protected $credentialId;
