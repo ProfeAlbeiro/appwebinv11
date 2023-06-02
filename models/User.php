@@ -19,6 +19,10 @@
                 die($e->getMessage());
             }
         }
+        public function __construct2($rolCode, $rolName){
+            $this->rolCode = $rolCode;
+            $this->rolName = $rolName;
+        }
         # Código Rol
         public function setRolCode($rolCode){
             $this->rolCode = $rolCode;
