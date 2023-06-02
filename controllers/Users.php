@@ -7,7 +7,7 @@
         public function createRol(){
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 require_once "views/roles/admin/header.view.php";
-                echo "Estoy en el controlador CreateRol";
+                require_once "views/modules/1_users/create_rol.view.php";
                 require_once "views/roles/admin/footer.view.php";
             }
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -118,6 +118,9 @@ form{
     flex-flow: column nowrap;    
     background: #666;
 }
+.form-rol{
+    flex: 1;
+}
 .form-header{    
     display: flex;
     flex-flow: row nowrap;
