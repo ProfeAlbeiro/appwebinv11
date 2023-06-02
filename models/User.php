@@ -1,12 +1,24 @@
 <?php
     class User{
+        private $dbh;
         protected $rolCode;        
         protected $rolName;        
         protected $userCode;        
         protected $userName;        
         protected $userLastName;        
         protected $userEmail;
-        public function __construct(){}
+        public function __construct(){
+            try {
+                $this->dbh = DataBase::connection();
+                $a = func_get_args();
+                $i = func_num_args();
+                if (method_exists($this, $f = '__construct' . $i)) {
+                    call_user_func_array(array($this, $f), $a);
+                }
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
         # Código Rol
         public function setRolCode($rolCode){
             $this->rolCode = $rolCode;
@@ -48,6 +60,20 @@
         }
         public function getUserEmail(){
             return $this->userEmail;
-        }        
+        }
+        
+        /* Casos de Uso Funcionalidades del Modelo Usuario */        
+        public function createRol(){
+            try {                
+                $sql = 'INSERT INTO ROLES VALUES (:rolCode,:rolName)';                
+                $stmt = $this->dbh->prepare($sql);                
+                $stmt->bindValue('rolCode', $this->getRolCode());
+                $stmt->bindValue('rolName', $this->getRolName());                
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+        
     }
 ?>
