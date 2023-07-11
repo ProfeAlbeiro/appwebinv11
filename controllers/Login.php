@@ -17,7 +17,7 @@
                 $userObj = new Credential(
                     $_POST['user'],
                     $_POST['pass']
-                );
+                );                
                 if ($userObj->getUserEmail() == "pepito@perez.com" AND $userObj->getCredentialPass() == "12345") {
                     header("Location: ?c=Dashboard");
                 } else {

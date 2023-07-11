@@ -1,5 +1,6 @@
 <?php
     class User{
+        # Primera Parte: Programación Orientada a Objetos (POO)
         private $dbh;
         protected $rolCode;        
         protected $rolName;        
@@ -65,6 +66,8 @@
         public function getUserEmail(){
             return $this->userEmail;
         }
+
+        # Segunda Parte: Funcionalidades de conexión a la DB
         
         /* Casos de Uso Funcionalidades del Modelo Usuario */        
         public function createRol(){
